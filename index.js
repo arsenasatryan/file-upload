@@ -2,6 +2,7 @@ import http from 'node:http';
 import formidable, {errors as formidableErrors} from 'formidable';
 
 const server = http.createServer(async (req, res) => {
+  console.log(req.method);
   if (req.url === '/api/upload' && req.method.toLowerCase() === 'post') {
     // parse a file upload
     const form = formidable({});
